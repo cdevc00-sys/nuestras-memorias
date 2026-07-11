@@ -1,0 +1,591 @@
+/* ==========================================
+   CONFIGURACIÓN GENERAL Y VARIABLES
+   ========================================== */
+:root {
+    --color-primario: #ff4d6d; /* Un rosa/rojo romántico */
+    --color-secundario: #ffb3c1;
+    --color-fondo: #fff0f3;
+    --color-texto: #590d22;
+    --fuente-titulos: 'Georgia', serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--color-fondo);
+    color: var(--color-texto);
+    line-height: 1.6;
+    width: 100%;
+    overflow-x: hidden; /* Bloquea por completo el scroll horizontal accidental */
+}
+
+/* ==========================================
+   MENÚ DE NAVEGACIÓN (NAVBAR)
+   ========================================== */
+.navbar {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%;
+    background: rgba(255, 240, 243, 0.95);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    z-index: 1000;
+}
+
+.navbar .logo {
+    font-family: var(--fuente-titulos);
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--color-primario);
+}
+
+.navbar ul {
+    display: flex;
+    list-style: none;
+    gap: 1.5rem;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: var(--color-texto);
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+.navbar a:hover {
+    color: var(--color-primario);
+}
+
+/* ==========================================
+   CONTENEDORES DE SECCIONES GENERALES
+   ========================================== */
+.section-container {
+    min-height: 100vh;
+    padding: 100px 2rem 2rem 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.titulo-seccion {
+    font-family: var(--fuente-titulos);
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: var(--color-primario);
+    text-align: center;
+}
+
+/* ==========================================
+   SECCIÓN 1: INICIO (HERO BANNER)
+   ========================================== */
+
+
+/* Sección Inicio con Imagen de Fondo (Sin rotaciones) */
+#inicio {
+    position: relative;
+    min-height: 100vh;
+    background-image: url('assets/heroAnimado\ \(1\)\ \(1\).gif'); 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed; /* Efecto parallax elegante en PC */
+    overflow: hidden;
+    width: 100%;
+    /* ❌ BORRADO EL ROTATE DE AQUÍ */
+}
+
+/* El filtro (Overlay) oscuro y romántico */
+.hero-overlay {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: linear-gradient(
+        135deg, 
+        rgba(20, 2, 7, 0.8) 0%, 
+        rgba(89, 13, 34, 0.65) 100%
+    );
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 100px 2rem 2rem 2rem;
+}
+
+/* Contenido interno del Hero (Totalmente derecho) */
+.inicio-content {
+    /* ❌ BORRADO EL ROTATE DE AQUÍ TAMBIÉN */
+    width: 100%;
+    text-align: center;
+    
+}
+
+/* Ajustes de los textos sobre el fondo oscuro */
+.inicio-content h1 {
+    font-family: var(--fuente-titulos);
+    font-size: 3.5rem;
+    color: #ffffff !important; /* Fuerza el color blanco para una legibilidad perfecta */
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.6); /* Sombra más definida para que flote sobre el fondo */
+    margin-bottom: 0.5rem;
+}
+
+
+.subtitulo {
+    font-size: 1.3rem;
+    font-style: italic;
+    color: var(--color-secundario);
+    margin-bottom: 2.5rem;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+/* Caja del Contador */
+.contador-box {
+    background: white;
+    padding: 1.5rem 2rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+    display: inline-block;
+    max-width: 100%;
+}
+
+.tiempo-grid {
+    display: flex;
+    gap: 1.5rem;
+    margin-top: 0.5rem;
+    font-size: 1.1rem;
+}
+
+.tiempo-grid strong {
+    font-size: 2rem;
+    color: var(--color-primario);
+    display: block;
+}
+
+/* ==========================================
+   SECCIÓN 2: LÍNEA DEL TIEMPO (TIMELINE)
+   ========================================== */
+.timeline {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem 0;
+    width: 100%;
+}
+
+.timeline::after {
+    content: '';
+    position: absolute;
+    width: 4px;
+    background-color: var(--color-secundario);
+    top: 0; bottom: 0; left: 50%;
+    margin-left: -2px;
+}
+
+.timeline-item {
+    padding: 10px 40px;
+    position: relative;
+    background-color: inherit;
+    width: 50%;
+}
+
+.timeline-item::after {
+    content: '❤️';
+    position: absolute;
+    width: 24px; height: 24px;
+    right: -14px;
+    background-color: var(--color-fondo);
+    top: 15px;
+    z-index: 10;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.izquierdo { left: 0; }
+.derecho { left: 50%; }
+.derecho::after { left: -10px; }
+
+.timeline-content {
+    padding: 20px;
+    background-color: white;
+    position: relative;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.timeline-date {
+    font-weight: bold;
+    color: var(--color-primario);
+    margin-bottom: 0.5rem;
+}
+
+.timeline-img {
+    width: 100%;
+    max-height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin: 10px 0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+/* ==========================================
+   SECCIÓN 3: GALERÍA DE FOTOS
+   ========================================== */
+.galeria-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    width: 100%;
+    max-width: 1000px;
+    padding: 1rem;
+}
+
+.galeria-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    aspect-ratio: 1 / 1;
+    background-color: #ddd;
+}
+
+.galeria-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.galeria-overlay {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(89, 13, 34, 0.7);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    padding: 1rem;
+    text-align: center;
+}
+
+.galeria-item:hover img { transform: scale(1.1); }
+.galeria-item:hover .galeria-overlay { opacity: 1; }
+
+/* ==========================================
+   SECCIÓN 4: CARTAS INTERACTIVAS
+   ========================================== */
+.cartas-grid {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 800px;
+    width: 100%;
+}
+
+.carta-sobre {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+    flex: 1;
+    min-width: 250px;
+    border: 2px dashed var(--color-secundario);
+}
+
+.carta-sobre:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(255, 77, 109, 0.15);
+}
+
+.sobre-icono {
+    font-size: 3rem;
+    color: var(--color-primario);
+    margin-bottom: 1rem;
+}
+
+/* ==========================================
+   SECCIÓN 5: NUESTRO RINCÓN Y BOTONES
+   ========================================== */
+.contacto-links {
+    display: flex;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.btn-contacto {
+    text-decoration: none;
+    background: white;
+    color: var(--color-texto);
+    padding: 0.8rem 1.5rem;
+    border-radius: 50px;
+    font-weight: 600;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.3s;
+}
+
+.btn-contacto:hover {
+    background: var(--color-primario);
+    color: white;
+    transform: scale(1.05);
+}
+
+.btn-contacto.btn-youtube:hover {
+    background: #ff0000 !important;
+    color: #ffffff !important;
+}
+
+/* ==========================================
+   ESTILOS COMPARTIDOS DE LOS MODALES
+   ========================================== */
+.modal-overlay {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(40, 5, 14, 0.6);
+    backdrop-filter: blur(5px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2000;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s ease;
+}
+
+.modal-overlay.activo {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.modal-content {
+    background: #ffffff;
+    padding: 2.5rem;
+    border-radius: 20px;
+    width: 90%;
+    max-width: 500px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+    position: relative;
+    transform: translateY(-20px);
+    transition: transform 0.4s ease;
+    border: 1px solid var(--color-secundario);
+}
+
+.modal-overlay.activo .modal-content {
+    transform: translateY(0);
+}
+
+.modal-cerrar {
+    position: absolute;
+    top: 15px; right: 20px;
+    font-size: 2rem;
+    color: var(--color-texto);
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.modal-cerrar:hover { color: var(--color-primario); }
+
+#modal-titulo {
+    font-family: var(--fuente-titulos);
+    color: var(--color-primario);
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+    text-align: center;
+}
+
+.modal-linea {
+    width: 50px; height: 2px;
+    background: var(--color-secundario);
+    margin: 0 auto 1.5rem auto;
+}
+
+#modal-texto {
+    font-size: 1.1rem;
+    color: var(--color-texto);
+    line-height: 1.8;
+    white-space: pre-line;
+    text-align: justify;
+}
+
+/* Modal del Formulario de Citas */
+.modal-formulario {
+    max-width: 550px !important;
+}
+
+.form-grupo {
+    width: 100%;
+    margin-bottom: 1.2rem;
+    text-align: left;
+}
+
+.form-grupo label {
+    display: block;
+    font-size: 0.95rem;
+    font-weight: 600;
+    margin-bottom: 0.4rem;
+    color: var(--color-texto);
+}
+
+.form-grupo select,
+.form-grupo input[type="date"],
+.form-grupo textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border: 2px solid var(--color-secundario);
+    border-radius: 10px;
+    font-family: inherit;
+    font-size: 1rem;
+    color: var(--color-texto);
+    background-color: var(--color-fondo);
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+.form-grupo select:focus,
+.form-grupo input[type="date"]:focus,
+.form-grupo textarea:focus {
+    border-color: var(--color-primario);
+}
+
+.btn-enviar-cita {
+    width: 100%;
+    background: var(--color-primario);
+    color: white;
+    border: none;
+    padding: 1rem;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(255, 77, 109, 0.3);
+    transition: all 0.3s;
+    margin-top: 0.5rem;
+}
+
+.btn-enviar-cita:hover {
+    background: #e63956;
+    transform: scale(1.02);
+}
+
+/* ==========================================
+   MÁGICA RESPONSIVA (MEDIA QUERY 768PX)
+   ========================================== */
+@media screen and (max-width: 768px) {
+    /* 1. Navbar Colapsable de forma limpia */
+    .navbar {
+        padding: 0.8rem 1rem;
+        flex-direction: column;
+        gap: 0.6rem;
+        position: relative; /* Evita saltos raros de vista fija en Safari o Chrome móvil */
+    }
+
+    .navbar ul {
+        gap: 0.8rem;
+        flex-wrap: wrap; /* Si son muchos links, bajan de renglón con gracia */
+        justify-content: center;
+        padding: 0;
+    }
+
+    .navbar a {
+        font-size: 0.9rem;
+    }
+
+    /* 2. Ajustes de Secciones */
+    .section-container {
+        padding: 60px 1.2rem 2rem 1.2rem;
+    }
+
+    .titulo-seccion {
+        font-size: 2rem;
+        margin-bottom: 1.5rem;
+    }
+
+    /* 3. Hero / Inicio */
+    #inicio {
+        background-attachment: scroll !important; /* Apaga el fixed para evitar bugs de re-escalado en móviles */
+    }
+
+    .hero-overlay {
+        padding: 40px 1rem 2rem 1rem;
+    }
+
+    .inicio-content h1 {
+        font-size: 2.2rem;
+    }
+
+    .subtitulo {
+        font-size: 1.1rem;
+        margin-bottom: 1.5rem;
+    }
+
+    /* 4. Contador */
+    .contador-box {
+        padding: 1rem;
+        width: 100%;
+        max-width: 310px;
+    }
+
+    .tiempo-grid {
+        gap: 0.8rem;
+        justify-content: center;
+    }
+
+    .tiempo-grid strong {
+        font-size: 1.5rem;
+    }
+
+    .tiempo-grid span {
+        font-size: 0.85rem;
+    }
+
+    /* 5. Línea del Tiempo estilo lista vertical única */
+    .timeline::after { 
+        left: 31px; 
+    }
+    
+    .timeline-item { 
+        width: 100%; 
+        padding-left: 60px; 
+        padding-right: 15px; 
+    }
+    
+    .timeline-item.derecho { 
+        left: 0%; 
+    }
+    
+    .timeline-item::after { 
+        left: 19px; 
+        right: auto; 
+    }
+    
+    .izquierdo { 
+        left: 0; 
+    }
+
+    /* 6. Modales responsivos */
+    .modal-content {
+        padding: 1.5rem;
+        width: 95%;
+    }
+}
