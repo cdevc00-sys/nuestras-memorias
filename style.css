@@ -589,3 +589,135 @@ body {
         width: 95%;
     }
 }
+
+/* Botón Flotante */
+.corazon-flotante {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    width: 60px;
+    height: 60px;
+    background-color: var(--color-primario);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    box-shadow: 0 4px 15px rgba(255, 77, 109, 0.4);
+    cursor: pointer;
+    z-index: 3000;
+    transition: transform 0.3s ease;
+    animation: pulsoCorazon 1.5s infinite;
+}
+
+.corazon-flotante:hover {
+    transform: scale(1.1);
+}
+
+@keyframes pulsoCorazon {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.08); }
+    100% { transform: scale(1); }
+}
+
+/* ========================================================
+   NUEVAS SECCIONES: FLORES DIARIAS Y CORAZÓN FLOTANTE
+   ======================================================== */
+
+/* Tarjeta contenedora de la sección intermedia */
+.tarjeta-flores {
+    background: var(--color-fondo);
+    padding: 2.5rem 2rem;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 10px 25px rgba(89, 13, 34, 0.05);
+    max-width: 500px;
+    width: 100%;
+    border: 2px dashed var(--color-secundario);
+    position: relative;
+    overflow: visible;
+    margin: 0 auto;
+}
+
+.tarjeta-flores h3 {
+    font-family: var(--fuente-titulos);
+    color: var(--color-texto);
+    font-size: 1.6rem;
+    margin-bottom: 0.8rem;
+}
+
+.tarjeta-flores p {
+    font-size: 1rem;
+    color: var(--color-texto);
+    margin-bottom: 1.5rem;
+    line-height: 1.5;
+}
+
+/* Ícono de girasol posicionado en la parte superior de la tarjeta */
+.icono-flotante-seccion {
+    font-size: 2.5rem;
+    position: absolute;
+    top: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: white;
+    width: 55px;
+    height: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    border: 1px solid var(--color-secundario);
+}
+
+/* Botón Flotante de Corazón (WhatsApp) */
+.corazon-flotante {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    width: 60px;
+    height: 60px;
+    background-color: var(--color-primario);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    box-shadow: 0 4px 15px rgba(255, 77, 109, 0.4);
+    cursor: pointer;
+    z-index: 3000;
+    transition: transform 0.3s ease;
+    animation: pulsoCorazon 1.5s infinite;
+}
+
+.corazon-flotante:hover {
+    transform: scale(1.1);
+}
+
+/* Animación de latido romántico */
+@keyframes pulsoCorazon {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.08); }
+    100% { transform: scale(1); }
+}
+
+/* ========================================================
+   OPTIMIZACIÓN RESPONSIVA EXTRA PARA MÓVILES
+   ======================================================== */
+@media screen and (max-width: 768px) {
+    .tarjeta-flores {
+        padding: 2rem 1.2rem;
+        width: 95%;
+    }
+    
+    .corazon-flotante {
+        bottom: 20px;
+        right: 20px;
+        width: 50px;
+        height: 50px;
+        font-size: 1.5rem;
+    }
+}

@@ -161,16 +161,50 @@
                 <div class="sobre-icono"><i class="fas fa-moon"></i></div>
                 <h3>Para antes de dormir</h3>
             </div>
+            <div class="carta-sobre" onclick="abrirCarta(6)">
+                <div class="sobre-icono"><i class="fas fa-calendar-check"></i></div>
+                <h3>Sobre la carta de aniversario...</h3>
+            </div>
+        </div>
+    </section>
+    <section id="flores-diarias" class="section-container" style="background-color: #fff; border-top: 1px solid var(--color-secundario); border-bottom: 1px solid var(--color-secundario);">
+        <h2 class="titulo-seccion">Un Detalle para ti Amor</h2>
+        <p style="margin-bottom: 2rem; font-style: italic; text-align: center; color: var(--color-texto);">
+            Cada día del año es una oportunidad para recordarte lo especial que eres. Pasa por aquí mañana para ver una flor diferente.
+        </p>
+        
+        <div class="tarjeta-flores">
+            <div class="icono-flotante-seccion">🌻</div>
+            <h3>Tus Flores de Hoy</h3>
+            <p>Descubre qué especie floreció hoy para ti y cuál es su significado romántico.</p>
+            <button class="btn-contacto" onclick="mostrarFloresDelDia()" style="margin-top: 1rem; border: 2px solid var(--color-primario); background-color: var(--color-primario); color: white;">
+                <i class="fas fa-seedling"></i> Ver mis flores de hoy
+            </button>
         </div>
     </section>
     <section id="contacto" class="section-container">
         <h2 class="titulo-seccion">Nuestro Rincón</h2>
         <p>¿Qué hacemos hoy?</p>
         <div class="contacto-links">
-            <a href="https://www.youtube.com/playlist?list=PLUVyWy1LeR00" target="_blank" class="btn-contacto btn-youtube"><i class="fab fa-youtube"></i> Nuestra Playlist</a>
+            <a href="https://www.youtube.com/playlist?list=TU_ID_DE_PLAYLIST" target="_blank" class="btn-contacto btn-youtube"><i class="fab fa-youtube"></i> Nuestra Playlist</a>
             <a href="javascript:void(0)" onclick="abrirModalCita()" class="btn-contacto"><i class="fas fa-calendar-alt"></i> Proponer una Cita</a>
+            
         </div>
     </section>
+
+    <div id="modal-flores" class="modal-overlay">
+        <div class="modal-content" style="max-width: 450px;">
+            <span class="modal-cerrar" onclick="cerrarModalFlores()">&times;</span>
+            <h3 id="flor-titulo"></h3>
+            <div class="modal-linea"></div>
+            
+            <div style="width: 100%; display: flex; justify-content: center; margin: 1rem 0;">
+                <canvas id="canvas-flor" width="300" height="300" style="background: transparent; max-width: 100%; height: auto;"></canvas>
+            </div>
+            
+            <p id="flor-significado" style="text-align: justify; font-style: italic; line-height: 1.6; font-size: 1rem;"></p>
+        </div>
+    </div>
 
     <div id="carta-modal" class="modal-overlay">
         <div class="modal-content">
@@ -247,5 +281,8 @@
     </script>
     
     <script src="script.js"></script>
+
+<!-- Botón Flotante de Corazón -->
+<div id="btn-corazon-flotante" class="corazon-flotante" onclick="enviarMensajeAmor()">❤️</div>
 </body>
 </html>
