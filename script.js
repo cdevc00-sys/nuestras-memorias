@@ -50,7 +50,7 @@ function abrirCarta(idCarta) {
         mensaje = "Espero que hayas tenido un día lindo, y si no fue así, ya terminó y estas a punto de iniciar uno nuevo. Deja ir todas las preocupaciones en la almohada. \n\nDescansa profundo, mi amor. Sueña con angelitos (o conmigo jaja) y que Dios siempre te bendiga y te cuide. Eres el amor de mi vida, mi princesita bella y todo lo que mas quiero. Descansa y mañana nos hablamos amor mio.";
     } else {
         titulo = "Buzón Secreto";
-        mensaje = "¡Ups! Esta carta aún se está escribiendo.";
+        mensaje = "Ya está lista, hoy te la entregan.";
     }
 
     tituloHtml.innerText = titulo;
